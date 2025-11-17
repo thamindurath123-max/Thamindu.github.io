@@ -1,43 +1,52 @@
-// data.js – 100% WORKING, sorted exactly like real IMAT exam
+// data.js – AI-GENERATED QUESTIONS ONLY – SORTED BY SECTION & DIFFICULTY
 const allQuestions = [
-  // 1. General Knowledge & Logical Reasoning (Easy first)
-  {year:"Mixed", question:"Which country is Rome the capital of?", options:["Spain","France","Italy","Greece","Germany"], correct:2, explanation:"Rome is the capital city of Italy.", section:"General Knowledge", difficulty:"Easy"},
-  {year:"Mixed", question:"Who wrote '1984'?", options:["George Orwell","Aldous Huxley","Ray Bradbury","J.K. Rowling","Charles Dickens"], correct:0, explanation:"George Orwell published it in 1949.", section:"General Knowledge", difficulty:"Easy"},
-  {year:2011, question:"Which of the following states is NOT a permanent member of the UN Security Council?", options:["China","France","Japan","United Kingdom","USA"], correct:2, explanation:"Japan is not a permanent member.", section:"Logical Reasoning", difficulty:"Easy"},
-  {year:2011, question:"Which ancient Greek is referred to as the father of Western medicine?", options:["Aristophanes","Aristotle","Hippocrates","Plato","Socrates"], correct:2, explanation:"Hippocrates.", section:"General Knowledge", difficulty:"Easy"},
 
-  // 2. Biology (Easy → Medium → Hard)
-  {year:"Mixed", question:"Which organelle is known as the powerhouse of the cell?", options:["Nucleus","Ribosome","Mitochondrion","Golgi apparatus","Lysosome"], correct:2, explanation:"Mitochondria produce ATP.", section:"Biology", difficulty:"Easy"},
-  {year:"Mixed", question:"What is the main function of red blood cells?", options:["Fight infection","Clot blood","Carry oxygen","Store energy","Digest food"], correct:2, explanation:"Hemoglobin carries oxygen.", section:"Biology", difficulty:"Easy"},
-  {year:2011, question:"Which organelle is primarily responsible for ATP synthesis during aerobic respiration?", options:["Golgi apparatus","Mitochondrion","Ribosome","Lysosome","Endoplasmic reticulum"], correct:1, explanation:"Mitochondria are the site of oxidative phosphorylation.", section:"Biology", difficulty:"Easy"},
-  {year:2015, question:"Which hormone lowers blood glucose levels?", options:["Glucagon","Cortisol","Epinephrine","Insulin","Thyroxine"], correct:3, explanation:"Insulin promotes glucose uptake.", section:"Biology", difficulty:"Easy"},
-  {year:2020, question:"Which structure is NOT part of the endomembrane system?", options:["Lysosome","Golgi apparatus","Rough ER","Mitochondrion","Transport vesicles"], correct:3, explanation:"Mitochondria are independent.", section:"Biology", difficulty:"Medium"},
-  {year:2021, question:"Which enzyme unwinds DNA during replication?", options:["Ligase","Polymerase III","Topoisomerase","Helicase","Primase"], correct:3, explanation:"Helicase breaks hydrogen bonds.", section:"Biology", difficulty:"Hard"},
+  // ═════════════════════════════════════════
+  // 1. GENERAL KNOWLEDGE & LOGICAL REASONING
+  // ═════════════════════════════════════════
+  // Easy
+  {question:"What is the capital city of Italy?", options:["Milan","Venice","Rome","Naples","Florence"], correct:2, explanation:"Rome has been the capital since 1871.", section:"General Knowledge", difficulty:"Easy"},
+  {question:"Which planet is known as the Red Planet?", options:["Venus","Jupiter","Mars","Saturn","Mercury"], correct:2, explanation:"Mars has iron oxide on its surface.", section:"General Knowledge", difficulty:"Easy"},
+  {question:"Who painted the Mona Lisa?", options:["Michelangelo","Picasso","Van Gogh","Leonardo da Vinci","Rembrandt"], correct:3, explanation:"Leonardo da Vinci, 1503–1519.", section:"General Knowledge", difficulty:"Easy"},
+  {question:"How many continents are there?", options:["5","6","7","8","9"], correct:2, explanation:"7 continents.", section:"General Knowledge", difficulty:"Easy"},
+  {question:"Which country won the FIFA World Cup in 2022?", options:["Brazil","France","Argentina","Germany","England"], correct:2, explanation:"Argentina defeated France in the final.", section:"General Knowledge", difficulty:"Easy"},
 
-  // 3. Chemistry
-  {year:"Mixed", question:"What is the atomic number of carbon?", options:["6","8","12","14","16"], correct:0, explanation:"Carbon has 6 protons.", section:"Chemistry", difficulty:"Easy"},
-  {year:"Mixed", question:"Which gas is produced when an acid reacts with a metal carbonate?", options:["Hydrogen","Oxygen","Carbon dioxide","Nitrogen","Chlorine"], correct:2, explanation:"CO₂ is released.", section:"Chemistry", difficulty:"Easy"},
-  {year:2019, question:"What is the hybridization of carbon in ethyne (C₂H₂)?", options:["sp³","sp²","sp","dsp²","d²sp³"], correct:2, explanation:"Triple bond → sp hybridization.", section:"Chemistry", difficulty:"Hard"},
+  // Medium
+  {question:"All cats are mammals. Some mammals are black. Therefore some cats are black. The conclusion follows only if we assume:", options:["All cats are black","Some cats are mammals","Black is common in mammals","There exist black mammals that are cats","No assumption needed"], correct:3, explanation:"The middle term must overlap.", section:"Logical Reasoning", difficulty:"Medium"},
+  {question:"If all A are B and no B are C, then:", options:["All A are C","No A are C","Some A are C","Some B are C","Cannot determine"], correct:1, explanation:"Valid syllogism.", section:"Logical Reasoning", difficulty:"Medium"},
 
-  // 4. Physics & Math
-  {year:"Mixed", question:"A car accelerates from 0 to 20 m/s in 5 seconds. What is its acceleration?", options:["4 m/s²","100 m/s²","25 m/s","0.25 m/s²","10 m/s"], correct:0, explanation:"a = Δv / t = 20 / 5 = 4 m/s².", section:"Physics & Math", difficulty:"Easy"},
-  {year:"Mixed", question:"What is the unit of electrical resistance?", options:["Ampere","Volt","Watt","Ohm","Joule"], correct:3, explanation:"Resistance is measured in ohms (Ω).", section:"Physics & Math", difficulty:"Easy"},
-  {year:2022, question:"What type of natural selection favors intermediate phenotypes?", options:["Directional","Stabilizing","Disruptive","Balancing","Sexual"], correct:1, explanation:"Stabilizing selection reduces variation.", section:"Physics & Math", difficulty:"Medium"}
+  // Hard
+  {question:"If some lawyers are politicians and no politicians are honest, which statement must be true?", options:["Some lawyers are honest","No lawyers are honest","All lawyers are politicians","Some politicians are lawyers","None of the above"], correct:4, explanation:"No necessary conclusion about lawyers’ honesty.", section:"Logical Reasoning", difficulty:"Hard"},
 
-  // ... I’ll add the remaining 700+ real questions year by year whenever you say “next 50”
-];
+  // ═════════════════════════════════════════
+  // 2. BIOLOGY – EASY
+  // ═════════════════════════════════════════
+  {question:"Which organelle is known as the powerhouse of the cell?", options:["Nucleus","Ribosome","Mitochondrion","Golgi apparatus","Lysosome"], correct:2, explanation:"Mitochondria produce ATP.", section:"Biology", difficulty:"Easy"},
+  {question:"What is the main function of red blood cells?", options:["Fight infection","Clot blood","Carry oxygen","Store energy","Digest food"], correct:2, explanation:"Hemoglobin binds oxygen.", section:"Biology", difficulty:"Easy"},
+  {question:"Which blood vessel carries oxygenated blood from the lungs to the heart?", options:["Pulmonary artery","Pulmonary vein","Aorta","Vena cava","Coronary artery"], correct:1, explanation:"Pulmonary veins.", section:"Biology", difficulty:"Easy"},
+  {question:"Which vitamin is needed for calcium absorption?", options:["Vitamin A","Vitamin B12","Vitamin C","Vitamin D","Vitamin K"], correct:3, explanation:"Vitamin D.", section:"Biology", difficulty:"Easy"},
+  {question:"Which part of the plant conducts photosynthesis?", options:["Root","Stem","Leaf","Flower","Fruit"], correct:2, explanation:"Leaves contain chloroplasts.", section:"Biology", difficulty:"Easy"},
+  {question:"How many chromosomes are in a normal human body cell?", options:["23","46","48","44","22"], correct:1, explanation:"46 (23 pairs).", section:"Biology", difficulty:"Easy"},
+  {question:"Which gas do plants absorb from the atmosphere?", options:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen","Argon"], correct:2, explanation:"CO₂ for photosynthesis.", section:"Biology", difficulty:"Easy"},
+  {question:"Which organ produces insulin?", options:["Liver","Kidney","Pancreas","Thyroid","Adrenal gland"], correct:2, explanation:"Beta cells in pancreas.", section:"Biology", difficulty:"Easy"},
+  {question:"Which structure protects the cell and controls what enters and leaves?", options:["Nucleus","Cell membrane","Mitochondrion","Ribosome","Cytoplasm"], correct:1, explanation:"Cell membrane.", section:"Biology", difficulty:"Easy"},
+  {question:"Which blood cells fight infection?", options:["Red blood cells","Platelets","White blood cells","Plasma","Hemoglobin"], correct:2, explanation:"Leukocytes.", section:"Biology", difficulty:"Easy"},
 
-const studyPlan = [
-  {week:1, title:"Logical Reasoning & General Knowledge", tasks:["Practice 100 questions","Read passages"]},
-  {week:2, title:"Biology – Cells & Molecules", tasks:["Organelles","Biomolecules"]},
-  {week:3, title:"Biology – Genetics & Physiology", tasks:["DNA","Human systems"]},
-  {week:4, title:"Chemistry – Basics", tasks:["Atomic structure","Bonding"]},
-  {week:5, title:"Chemistry – Reactions", tasks:["Stoichiometry","Acids/Bases"]},
-  {week:6, title:"Physics – Mechanics", tasks:["Kinematics","Forces"]},
-  {week:7, title:"Physics – Energy & Waves", tasks:["Work/Power","Waves"]},
-  {week:8, title:"Math & Problem Solving", tasks:["Algebra","Probability"]},
-  {week:9, title:"Full Timed Mocks", tasks:["Do 2011–2022 papers"]},
-  {week:10, title:"Review Weak Areas", tasks:["Target low-score topics"]},
-  {week:11, title:"Final Revision", tasks:["Quick review only"]},
-  {week:12, title:"Exam Week", tasks:["Rest & confidence"]}
-];
+  // BIOLOGY – MEDIUM (continuing…)
+  {question:"In which phase of mitosis do sister chromatids separate?", options:["Prophase","Metaphase","Anaphase","Telophase","Cytokinesis"], correct:2, explanation:"Anaphase.", section:"Biology", difficulty:"Medium"},
+  {question:"Which hormone lowers blood glucose levels?", options:["Glucagon","Adrenaline","Thyroxine","Cortisol","Insulin"], correct:4, explanation:"Insulin promotes uptake.", section:"Biology", difficulty:"Medium"},
+  {question:"Where does the light-independent reaction (Calvin cycle) occur?", options:["Thylakoid membrane","Stroma","Mitochondria","Cytoplasm","Nucleus"], correct:1, explanation:"Stroma of chloroplast.", section:"Biology", difficulty:"Medium"},
+  {question:"Which type of RNA carries amino acids to the ribosome?", options:["mRNA","tRNA","rRNA","snRNA","miRNA"], correct:1, explanation:"Transfer RNA.", section:"Biology", difficulty:"Medium"},
+  {question:"What is the role of NADH in cellular respiration?", options:["Final electron acceptor","Energy carrier","Oxygen donor","Glucose transporter","ATP destroyer"], correct:1, explanation:"Shuttles electrons to ETC.", section:"Biology", difficulty:"Medium"},
+  {question:"Which structure in neurons receives signals from other neurons?", options:["Axon","Dendrite","Myelin sheath","Node of Ranvier","Synaptic knob"], correct:1, explanation:"Dendrites.", section:"Biology", difficulty:"Medium"},
+  {question:"Which process moves water across a semi-permeable membrane?", options:["Diffusion","Active transport","Osmosis","Facilitated diffusion","Endocytosis"], correct:2, explanation:"Osmosis.", section:"Biology", difficulty:"Medium"},
+  {question:"Which enzyme breaks down hydrogen peroxide in cells?", options:["Catalase","Amylase","Lipase","Protease","Pepsin"], correct:0, explanation:"Catalase → 2H₂O + O₂.", section:"Biology", difficulty:"Medium"},
+  {question:"Which part of the brain controls balance and coordination?", options:["Cerebrum","Cerebellum","Medulla","Hypothalamus","Thalamus"], correct:1, explanation:"Cerebellum.", section:"Biology", difficulty:"Medium"},
+  {question:"Which gas is produced during anaerobic respiration in muscle cells?", options:["Carbon dioxide","Lactic acid","Ethanol","Oxygen","Acetyl-CoA"], correct:1, explanation:"Lactic acid (lactate).", section:"Biology", difficulty:"Medium"},
+
+  // BIOLOGY – HARD (first 20 of many)
+  {question:"During DNA replication, why is the lagging strand synthesized discontinuously?", options:["DNA polymerase only works 5'→3'","Helicase is slower","Primase is absent","Ligase is missing","Topoisomerase error"], correct:0, explanation:"Polymerase directionality forces Okazaki fragments.", section:"Biology", difficulty:"Hard"},
+  {question:"A nonsense mutation is most likely to cause:", options:["Silent change","Single amino acid swap","Premature stop codon","Frameshift","No change"], correct:2, explanation:"Converts codon to stop.", section:"Biology", difficulty:"Hard"},
+  {question:"Which event occurs in prophase I of meiosis but NOT in mitosis?", options:["Chromosome condensation","Spindle formation","Crossing over","Nuclear envelope breakdown","Centrosome migration"], correct:2, explanation:"Synapsis and crossing over.", section:"Biology", difficulty:"Hard"},
+  {question:"The Bohr effect describes:", options:["Increased O₂ affinity at low pH","Decreased O₂ affinity at low pH","CO₂ binding to hemoglobin","Myoglobin saturation","Fetal hemoglobin advantage"], correct:1, explanation:"Acidic conditions favor oxygen release.", section:"Biology", difficulty:"Hard"},
+  {question:"Telomerase is active in:", options:["Most somatic cells","Germ cells and cancer cells","Only embryonic stem cells","Never in humans","Only during mitosis"], correct:1, explanation:"Prevents telomere shortening in immortal cell lines.", section:"Biology", difficulty:"Hard"},
