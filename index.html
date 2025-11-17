@@ -3,47 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free IMAT Practice – 10,000+ Questions</title>
+    <title>IMAT Free Practice 2026 – 10,000+ Questions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {font-family: Arial, sans-serif; background:#f4f4f4; margin:0; padding:20px; text-align:center;}
-        .container {max-width:600px; margin:auto; background:white; padding:30px; border-radius:15px; box-shadow:0 0 20px rgba(0,0,0,0.1);}
-        h1 {color:#007bff;}
-        select, button {width:80%; padding:15px; margin:15px; font-size:18px; border-radius:8px;}
-        button {background:#007bff; color:white; border:none; cursor:pointer;}
-        button:hover {background:#0056b3;}
-        a {color:#007bff; text-decoration:none; font-weight:bold;}
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #fff, #a0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p.subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        select {
+            width: 100%;
+            padding: 16px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.25);
+            color: white;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+        }
+        select option { color: #333; }
+        button {
+            width: 100%;
+            padding: 18px;
+            margin-top: 20px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ff88, #00d26a);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,255,136,0.4);
+            transition: all 0.3s;
+        }
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,255,136,0.6);
+        }
+        .ebook {
+            margin-top: 25px;
+            padding: 18px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            border-radius: 12px;
+            font-size: 1.2rem;
+        }
+        .ebook a { color: white; text-decoration: none; }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>Free IMAT Practice</h1>
-    <p>10,000+ original questions • No registration • 100% free<br>
-       For detailed explanations + full syllabus → <a href="YOUR_EBOOK_LINK_HERE" target="_blank">Buy my eBook</a></p>
-
+<div class="card">
+    <h1>IMAT 2026</h1>
+    <p class="subtitle">10,000+ Free Questions • Timed Quizzes • Full Mocks</p>
+    
     <select id="section">
         <option value="all">All Sections</option>
         <option value="biology">Biology</option>
         <option value="chemistry">Chemistry</option>
         <option value="physics">Physics & Mathematics</option>
-        <option value="logical">Logical Reasoning & Problem Solving</option>
-        <option value="gk">Reading Comprehension & General Knowledge</option>
+        <option value="logical">Logical Reasoning</option>
+        <option value="gk">Reading & General Knowledge</option>
     </select>
 
     <select id="difficulty">
-        <option value="all">All Difficulties</option>
+        <option value="all">Any Difficulty</option>
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
+        <option value="hard">Hard 🔥</option>
     </select>
 
     <select id="mode">
-        <option value="20">20 Questions – 20 minutes</option>
-        <option value="40">40 Questions – 40 minutes</option>
-        <option value="60">60 Questions – 60 minutes</option>
-        <option value="mock">Full Mock Exam – 100 Questions – 90 minutes</option>
+        <option value="20">20 Questions – 20 min</option>
+        <option value="40">40 Questions – 40 min</option>
+        <option value="60">60 Questions – 60 min</option>
+        <option value="mock">Full Mock – 100 Q – 90 min</option>
     </select>
 
-    <button id="start">START PRACTICE</button>
+    <button id="start">START NOW</button>
+
+    <div class="ebook">
+        <a href="YOUR_EBOOK_LINK_HERE" target="_blank">
+            Want Full Explanations + Syllabus + Secrets? → BUY MY EBOOK
+        </a>
+    </div>
 </div>
 
 <script>
