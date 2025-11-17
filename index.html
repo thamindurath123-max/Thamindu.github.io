@@ -1,81 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IMAT Free 2025-2026 • 100% Real Past Papers + Quizzes</title>
-  <meta name="description" content="Free IMAT practice with ALL official questions 2011–2025, timed quizzes, study plan, past papers."/>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free IMAT Prep</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
     <div class="container">
-      <div class="header-top">
-        <h1>IMAT <span class="free">FREE</span> 2025-2026</h1>
-        <button id="darkModeToggle">🌙 Dark</button>
-      </div>
-      <p>All real IMAT questions 2011–2025 • Timed quizzes • Study plan • No ads</p>
-      <div class="nav-buttons">
-        <button onclick="showSection('home')">Home</button>
-        <button onclick="showSection('practice')">Practice</button>
-        <button onclick="showSection('quiz')">Timed Quiz</button>
-        <button onclick="showSection('studyplan')">Study Plan</button>
-        <button onclick="showSection('pdfs')">Past Papers</button>
-      </div>
+        <h1>Free IMAT Practice Questions</h1>
+        <p>Thousands of AI-generated questions. For explanations & syllabus, <a href="YOUR_EBOOK_LINK">buy my eBook</a>.</p>
+        
+        <label for="section">Choose Section:</label>
+        <select id="section">
+            <option value="all">All</option>
+            <option value="logical">Logical Reasoning & Problem Solving</option>
+            <option value="gk">Reading Comprehension & General Knowledge</option>
+            <option value="biology">Biology</option>
+            <option value="chemistry">Chemistry</option>
+            <option value="physics">Physics & Mathematics</option>
+        </select>
+        
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty">
+            <option value="all">All</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        
+        <label for="mode">Mode:</label>
+        <select id="mode">
+            <option value="quiz20">20 Questions / 20 Minutes</option>
+            <option value="quiz40">40 Questions / 40 Minutes</option>
+            <option value="mock">Full Mock Exam (100 Questions / 90 Minutes)</option>
+        </select>
+        
+        <button id="startBtn">Start</button>
     </div>
-  </header>
-
-  <div class="container">
-    <section id="home" class="active"><h2>Welcome Future Doctor 🇮🇹</h2><p>Everything you need – 100 % free.</p><button class="big-btn" onclick="showSection('practice')">Start Practicing →</button></section>
-
-    <section id="practice">
-      <div class="controls">
-        <input type="text" id="search" placeholder="Search..." onkeyup="filterQuestions()">
-        <select id="sectionFilter" onchange="filterQuestions()"><option value="all">All Sections</option><option>Biology</option><option>Chemistry</option><option>Physics & Math</option><option>Logical Reasoning</option><option>General Knowledge</option></select>
-        <select id="yearFilter" onchange="filterQuestions()"><option value="all">All Years</option><option>2011</option><option>2012</option><option>2013</option><option>2014</option><option>2015</option><option>2016</option><option>2017</option><option>2018</option><option>2019</option><option>2020</option><option>2021</option><option>2022</option></select>
-      </div>
-      <div id="questions"></div>
-    </section>
-
-    <section id="quiz">
-      <h2>Timed Quiz (Real IMAT Rules)</h2>
-      <div class="quiz-setup">
-        <select id="quizLength"><option value="20">20 Q (30 min)</option><option value="40">40 Q (60 min)</option><option value="60" selected>60 Q (100 min)</option></select>
-        <button onclick="startQuiz()">Start</button>
-      </div>
-      <div id="quizArea" style="display:none">
-        <div class="timer">Time left: <span id="timer">100:00</span></div>
-        <div id="quizQuestion"></div>
-        <div id="quizOptions"></div>
-        <button id="nextBtn" style="display:none;margin-top:20px" onclick="nextQuizQuestion()">Next →</button>
-      </div>
-    </section>
-
-    <section id="studyplan"><h2>12-Week Study Plan</h2><div id="plan"></div></section>
-
-    <section id="pdfs">
-      <h2>Official Past Papers 2011–2025</h2>
-      <div class="pdf-grid">
-        <div>2011 • <a href="pastpapers/2011 IMAT Exam.pdf" target="_blank">Exam</a></div>
-        <div>2012 • <a href="pastpapers/2012 IMAT Exam.pdf" target="_blank">Exam</a></div>
-        <div>2013 • <a href="pastpapers/2013 IMAT Exam.pdf" target="_blank">Exam</a></div>
-        <div>2014 • <a href="pastpapers/2014 IMAT Exam.pdf" target="_blank">Exam</a></div>
-        <div>2015 • <a href="pastpapers/2015 IMAT Exam.pdf" target="_blank">Exam</a></div>
-        <div>2016 • <a href="pastpapers/2016 IMAT Exam.pdf" target="_blank">Exam</a></div>
-        <div>2017 • <a href="pastpapers/2017 IMAT Exam.pdf" target="_blank">Exam</a></div>
-        <div>2018 • <a href="pastpapers/2018 IMAT Exam.pdf" target="_blank">Exam</a></div>
-        <div>2019 • <a href="pastpapers/2019 IMAT Exam.pdf" target="_blank">Exam</a></div>
-        <div>2020 • <a href="pastpapers/2020 IMAT Exam.pdf" target="_blank">Exam</a></div>
-        <div>2021 • <a href="pastpapers/2021 IMAT Exam (Original).pdf" target="_blank">Exam</a></div>
-        <div>2022 • <a href="pastpapers/2022 IMAT Exam (Original).pdf" target="_blank">Exam</a></div>
-        <div>2023–2025 coming soon!</div>
-      </div>
-    </section>
-  </div>
-
-  <footer><p>Made with ❤️ by Thamindu for future Italian doctors • 100% Free Forever</p></footer>
-
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
