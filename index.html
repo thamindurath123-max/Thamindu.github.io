@@ -2,108 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Free IMAT 2025-2026 Practice | 780+ Questions + Quizzes + Study Plan</title>
-  <meta name="description" content="Free IMAT practice: 780+ questions, timed quizzes, 12-week study plan, progress tracker. No login. Made for future Italian doctors."/>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="https://favicon.im/stethoscope.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical Quiz Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0a0a0f;
+      color: white;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(10px);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1000;
+      border-bottom: 1px solid #1a1a22;
+    }
+    nav a {
+      color: #a8a8ff;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #7f5cff;
+    }
+    .hero {
+      padding-top: 130px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 20px #7f5cff;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #bfbff5;
+    }
+    .btn {
+      background: #7f5cff;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      box-shadow: 0 0 20px #7f5cff;
+    }
+    .section {
+      padding: 80px 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      background: #12121a;
+      border: 1px solid #1f1f2d;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+    footer {
+      margin-top: 80px;
+      padding: 40px;
+      text-align: center;
+      color: #b8b8d8;
+      border-top: 1px solid #1a1a22;
+      background: #0c0c12;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="header-top">
-        <h1>IMAT 2025-2026 <span class="free">FREE</span></h1>
-        <button id="darkModeToggle">🌙 Dark Mode</button>
-      </div>
-      <p>780+ official-style questions • Timed quizzes • 12-week study plan • Instant scores</p>
-      <div class="nav-buttons">
-        <button onclick="showSection('home')">Home</button>
-        <button onclick="showSection('practice')">Practice</button>
-        <button onclick="showSection('quiz')">Timed Quiz</button>
-        <button onclick="showSection('studyplan')">Study Plan</button>
-        <button onclick="showSection('pdfs')">Past Papers</button>
-      </div>
+  <nav>
+    <div class="logo">MED-QUIZ</div>
+    <div>
+      <a href="#quiz">Quiz</a>
+      <a href="#study">Study Plan</a>
+      <a href="#papers">Past Papers</a>
+      <a href="#about">About</a>
     </div>
-  </header>
+  </nav>
 
-  <div class="container">
-    <!-- HOME -->
-    <section id="home" class="active">
-      <h2>Welcome Future Doctor! 🇮🇹</h2>
-      <p>Everything you need to ace IMAT 2025-2026 – completely free.</p>
-      <div class="stats">
-        <div>780+ Questions</div>
-        <div>4 Sections</div>
-        <div>12-Week Plan</div>
-        <div>Zero Ads</div>
-      </div>
-      <button class="big-btn" onclick="showSection('practice')">Start Practicing Now →</button>
-    </section>
+  <div class="hero">
+    <h1>Boost Your Medical Exam Skills</h1>
+    <p>Practice questions, study plans, and exam guidance in one place.</p>
+    <div class="btn">Start Practicing</div>
+  </div>
 
-    <!-- PRACTICE -->
-    <section id="practice">
-      <div class="controls">
-        <input type="text" id="search" placeholder="Search questions..." onkeyup="filterQuestions()">
-        <select id="sectionFilter" onchange="filterQuestions()">
-          <option value="all">All Sections</option>
-          <option value="Biology">Biology</option>
-          <option value="Chemistry">Chemistry</option>
-          <option value="Physics & Math">Physics & Math</option>
-          <option value="Logical Reasoning">Logical Reasoning</option>
-        </select>
-        <select id="difficultyFilter" onchange="filterQuestions()">
-          <option value="all">All Difficulty</option>
-          <option value="Easy">Easy</option>
-          <option value="Medium">Medium</option>
-          <option value="Hard">Hard</option>
-        </select>
-      </div>
-      <div id="questions"></div>
-    </section>
-
-    <!-- QUIZ -->
-    <section id="quiz">
-      <h2>Timed Quiz Mode</h2>
-      <div class="quiz-setup">
-        <select id="quizLength">
-          <option value="20">20 Questions (30 min)</option>
-          <option value="40">40 Questions (60 min)</option>
-          <option value="60">Full 60 Questions (100 min)</option>
-        </select>
-        <button onclick="startQuiz()">Start Quiz</button>
-      </div>
-      <div id="quizArea" style="display:none">
-        <div class="timer">Time: <span id="timer">00:00</span></div>
-        <div id="quizQuestion"></div>
-        <div id="quizOptions"></div>
-        <button onclick="nextQuizQuestion()" id="nextBtn" style="display:none">Next →</button>
-        <div id="quizResult" style="display:none"></div>
-      </div>
-    </section>
-
-    <!-- STUDY PLAN -->
-    <section id="studyplan">
-      <h2>12-Week IMAT Study Plan</h2>
-      <div id="plan"></div>
-    </section>
-
-    <!-- PDFS -->
-    <section id="pdfs">
-      <h2>Official Past Papers (PDF)</h2>
-      <p>Download & practice the real exams:</p>
-      <ul class="pdf-list">
-        <li><a href="https://www.universitaly.it/sites/default/files/2024/imattest2024_en.pdf" target="_blank">IMAT 2024</a></li>
-        <li><a href="https://www.universitaly.it/sites/default/files/2023/imattest2023_en.pdf" target="_blank">IMAT 2023</a></li>
-        <!-- add more years as needed -->
+  <div class="section" id="quiz">
+    <h2>MCQ Quiz</h2>
+    <div class="card">
+      <p><b>Question 1:</b> Which vitamin deficiency causes night blindness?</p>
+      <ul>
+        <li>A. Vitamin A</li>
+        <li>B. Vitamin C</li>
+        <li>C. Vitamin D</li>
+        <li>D. Vitamin K</li>
       </ul>
-    </section>
+    </div>
+    <div class="card">
+      <p><b>Question 2:</b> Normal adult respiratory rate is?</p>
+      <ul>
+        <li>A. 6–10 bpm</li>
+        <li>B. 12–20 bpm</li>
+        <li>C. 25–40 bpm</li>
+        <li>D. 40–60 bpm</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section" id="study">
+    <h2>12-Week Study Plan</h2>
+    <div class="card">Week 1–2: Anatomy basics, major systems.</div>
+    <div class="card">Week 3–4: Physiology fundamentals + practice MCQs.</div>
+    <div class="card">Week 5–6: Pathology core topics.</div>
+    <div class="card">Week 7–8: Pharmacology essentials.</div>
+    <div class="card">Week 9–10: Mock tests + weak areas.</div>
+    <div class="card">Week 11–12: Full revisions & timed papers.</div>
+  </div>
+
+  <div class="section" id="papers">
+    <h2>Past Papers</h2>
+    <div class="card">Past Paper 2021 – 50 MCQs</div>
+    <div class="card">Past Paper 2022 – 50 MCQs</div>
+    <div class="card">Past Paper 2023 – 60 MCQs</div>
+  </div>
+
+  <div class="section" id="about">
+    <h2>About This Site</h2>
+    <div class="card">This platform is built to help students prepare efficiently for medical entrance and theory exams through quizzes and structured plans.</div>
   </div>
 
   <footer>
-    <p>Made with ❤️ by Thamindu for future Italian doctors • 100% Free Forever</p>
+    © 2025 MED-QUIZ | Built for students.
   </footer>
-
-  <script src="data.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
