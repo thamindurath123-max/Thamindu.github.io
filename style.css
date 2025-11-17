@@ -1,39 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Inter',sans-serif; background:#f8fafc; color:#1e293b; line-height:1.6; }
-.container { max-width:1100px; margin:0 auto; padding:0 20px; }
-header { background:linear-gradient(135deg,#1d4ed8,#7c3aed); color:white; padding:60px 20px; text-align:center; }
-header h1 { font-size:2.8rem; margin-bottom:12px; }
-header p { font-size:1.2rem; opacity:0.9; }
-
-.filters { display:flex; gap:15px; margin:30px 0; flex-wrap:wrap; }
-select { padding:12px; border-radius:8px; border:1px solid #cbd5e1; font-size:1rem; }
-
-.question-card {
-  background:white; border-radius:12px; padding:24px; margin-bottom:24px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08); border-left:5px solid #3b82f6;
-}
-.question { font-size:1.25rem; font-weight:600; margin-bottom:16px; }
-.options { list-style:none; }
-.options li { padding:12px; margin:8px 0; background:#f1f5f9; border-radius:8px; cursor:pointer; transition:0.2s; }
-.options li:hover { background:#e2e8f0; }
-.options li.correct { background:#dcfce7; border:2px solid #22c55e; }
-.options li.wrong { background:#fee2e2; border:2px solid #ef4444; }
-
-.explanation {
-  margin-top:16px; padding:16px; background:#f0f9ff; border-radius:8px; border-left:4px solid #0ea5e9;
-  display:none;
-}
-.explanation.show { display:block; }
-
-.topic-tag {
-  display:inline-block; padding:4px 12px; background:#e0e7ff; color:#4338ca;
-  border-radius:20px; font-size:0.8rem; font-weight:600; margin-top:8px;
-}
-.difficulty { float:right; font-weight:600; }
-.easy { color:#22c55e; }
-.medium { color:#f59e0b; }
-.hard { color:#ef4444; }
-
-footer { text-align:center; padding:40px; background:#1e293b; color:white; margin-top:60px; }
+.pagination { text-align:center; margin:40px 0; }
+.pagination button { padding:10px 20px; margin:0 10px; }
+.quiz-btn { display:block; width:100%; margin:10px 0; padding:15px; font-size:1.1rem; }
+.week-card { background:white; padding:20px; margin:20px 0; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+body.dark .week-card { background:#1e293b; }
+.tasks li { margin:8px 0; }
