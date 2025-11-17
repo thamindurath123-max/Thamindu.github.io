@@ -3,41 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free IMAT Prep</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Free IMAT Practice – 10,000+ Questions</title>
+    <style>
+        body {font-family: Arial, sans-serif; background:#f4f4f4; margin:0; padding:20px; text-align:center;}
+        .container {max-width:600px; margin:auto; background:white; padding:30px; border-radius:15px; box-shadow:0 0 20px rgba(0,0,0,0.1);}
+        h1 {color:#007bff;}
+        select, button {width:80%; padding:15px; margin:15px; font-size:18px; border-radius:8px;}
+        button {background:#007bff; color:white; border:none; cursor:pointer;}
+        button:hover {background:#0056b3;}
+        a {color:#007bff; text-decoration:none; font-weight:bold;}
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Free IMAT Practice Questions</h1>
-        <p>Thousands of AI-generated questions. For explanations & syllabus, <a href="YOUR_EBOOK_LINK">buy my eBook</a>.</p>
-        
-        <label for="section">Choose Section:</label>
-        <select id="section">
-            <option value="all">All</option>
-            <option value="logical">Logical Reasoning & Problem Solving</option>
-            <option value="gk">Reading Comprehension & General Knowledge</option>
-            <option value="biology">Biology</option>
-            <option value="chemistry">Chemistry</option>
-            <option value="physics">Physics & Mathematics</option>
-        </select>
-        
-        <label for="difficulty">Difficulty:</label>
-        <select id="difficulty">
-            <option value="all">All</option>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-        </select>
-        
-        <label for="mode">Mode:</label>
-        <select id="mode">
-            <option value="quiz20">20 Questions / 20 Minutes</option>
-            <option value="quiz40">40 Questions / 40 Minutes</option>
-            <option value="mock">Full Mock Exam (100 Questions / 90 Minutes)</option>
-        </select>
-        
-        <button id="startBtn">Start</button>
-    </div>
-    <script src="script.js"></script>
+<div class="container">
+    <h1>Free IMAT Practice</h1>
+    <p>10,000+ original questions • No registration • 100% free<br>
+       For detailed explanations + full syllabus → <a href="YOUR_EBOOK_LINK_HERE" target="_blank">Buy my eBook</a></p>
+
+    <select id="section">
+        <option value="all">All Sections</option>
+        <option value="biology">Biology</option>
+        <option value="chemistry">Chemistry</option>
+        <option value="physics">Physics & Mathematics</option>
+        <option value="logical">Logical Reasoning & Problem Solving</option>
+        <option value="gk">Reading Comprehension & General Knowledge</option>
+    </select>
+
+    <select id="difficulty">
+        <option value="all">All Difficulties</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+
+    <select id="mode">
+        <option value="20">20 Questions – 20 minutes</option>
+        <option value="40">40 Questions – 40 minutes</option>
+        <option value="60">60 Questions – 60 minutes</option>
+        <option value="mock">Full Mock Exam – 100 Questions – 90 minutes</option>
+    </select>
+
+    <button id="start">START PRACTICE</button>
+</div>
+
+<script>
+document.getElementById("start").onclick = () => {
+    const s = document.getElementById("section").value;
+    const d = document.getElementById("difficulty").value;
+    const m = document.getElementById("mode").value;
+    location.href = `quiz.html?s=${s}&d=${d}&m=${m}`;
+};
+</script>
 </body>
 </html>
