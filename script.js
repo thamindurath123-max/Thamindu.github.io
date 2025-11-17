@@ -1,4 +1,4 @@
-// ———————— Dark Mode ————————
+// Dark Mode
 const darkToggle = document.getElementById('darkModeToggle');
 darkToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
@@ -11,7 +11,7 @@ if (localStorage.getItem('imatDarkMode') === 'true') {
   darkToggle.textContent = '☀️ Light';
 }
 
-// ———————— Navigation ————————
+// Navigation
 function showSection(id) {
   document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -20,7 +20,7 @@ function showSection(id) {
 }
 showSection('home');
 
-// ———————— PRACTICE MODE WITH PAGINATION ————————
+// PRACTICE WITH PAGINATION
 const QUESTIONS_PER_PAGE = 15;
 let currentPage = 0;
 let filteredQuestions = allQuestions;
@@ -43,12 +43,11 @@ function renderPracticePage(page) {
     </div>
   `).join('');
 
-  // Pagination controls
   const totalPages = Math.ceil(filteredQuestions.length / QUESTIONS_PER_PAGE);
   container.innerHTML += `
     <div class="pagination">
       <button onclick="renderPracticePage(${page-1})" ${page===0?'disabled':''}>← Previous</button>
-      <span>Page ${page+1} of ${totalPages}</span>
+      <span>Page ${page+1} of ${totalPages} (${filteredQuestions.length} questions)</span>
       <button onclick="renderPracticePage(${page+1})" ${page>=totalPages-1?'disabled':''}>Next →</button>
     </div>
   `;
@@ -56,7 +55,7 @@ function renderPracticePage(page) {
 
 function checkAnswer(el, chosenIdx, correctIdx) {
   const options = el.parentNode.querySelectorAll('li');
-  options.forEach(li => li.style.pointerEvents = 'none');
+  options.forEach(li => li.onclick = null);
   if (chosenIdx === correctIdx) el.classList.add('correct');
   else {
     el.classList.add('wrong');
@@ -71,10 +70,7 @@ function filterQuestions() {
   const section = document.getElementById('sectionFilter').value;
   const diff = document.getElementById('difficultyFilter').value;
 
-  if (search) filtered = filtered.filter(q => 
-    q.question.toLowerCase().includes(search) || 
-    q.explanation.toLowerCase().includes(search)
-  );
+  if (search) filtered = filtered.filter(q => q.question.toLowerCase().includes(search) || q.explanation.toLowerCase().includes(search));
   if (section !== 'all') filtered = filtered.filter(q => q.section === section);
   if (diff !== 'all') filtered = filtered.filter(q => q.difficulty === diff);
 
@@ -82,7 +78,7 @@ function filterQuestions() {
   renderPracticePage(0);
 }
 
-// ———————— QUIZ MODE – FIXED (Next button now works) ————————
+// QUIZ MODE – FIXED
 let quizQuestions = [], currentQuizIndex = 0, score = 0, timerInterval;
 
 function startQuiz() {
@@ -114,15 +110,16 @@ function showQuizQuestion() {
   const q = quizQuestions[currentQuizIndex];
   document.getElementById('quizQuestion').innerHTML = `<strong>${currentQuizIndex + 1}/${quizQuestions.length}</strong> ${q.question}`;
   document.getElementById('quizOptions').innerHTML = q.options.map((opt, i) => `
-    <button class="quiz-btn" onclick="selectQuizAnswer(${i})">${opt}</button>
+    <button class="quiz-btn" onclick="selectQuizAnswer(${i}, this)">${opt}</button>
   `).join('');
   document.getElementById('nextBtn').style.display = 'none';
 }
 
-function selectQuizAnswer(chosen) {
+function selectQuizAnswer(chosen, btn) {
   const q = quizQuestions[currentQuizIndex];
   if (chosen === q.correct) score++;
   document.querySelectorAll('.quiz-btn').forEach(b => b.disabled = true);
+  btn.style.background = chosen === q.correct ? '#22c55e' : '#ef4444';
   document.getElementById('nextBtn').style.display = 'block';
 }
 
@@ -134,13 +131,13 @@ function nextQuizQuestion() {
 function endQuiz() {
   clearInterval(timerInterval);
   document.getElementById('quizArea').innerHTML = `
-    <h2>Quiz Finished!</h2>
-    <p style="font-size:2rem">Score: ${score} / ${quizQuestions.length} (${Math.round(score/quizQuestions.length*100)}%)</p>
+    <h2>Quiz Complete! 🎉</h2>
+    <p style="font-size:2rem">Score: ${score}/${quizQuestions.length} (${Math.round(score/quizQuestions.length*100)}%)</p>
     <button class="big-btn" onclick="location.reload()">Back to Home</button>
   `;
 }
 
-// ———————— Study Plan ————————
+// Study Plan (unchanged)
 function renderStudyPlan() {
   const container = document.getElementById('plan');
   container.innerHTML = studyPlan.map((week, i) => `
@@ -153,13 +150,11 @@ function renderStudyPlan() {
   `).join('');
   loadProgress();
 }
-
 function saveProgress() {
   const checkboxes = document.querySelectorAll('#plan input[type="checkbox"]');
   const progress = Array.from(checkboxes).map(cb => cb.checked);
   localStorage.setItem('imatStudyProgress', JSON.stringify(progress));
 }
-
 function loadProgress() {
   const saved = localStorage.getItem('imatStudyProgress');
   if (saved) {
